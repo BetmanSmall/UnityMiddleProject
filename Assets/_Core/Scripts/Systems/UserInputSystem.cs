@@ -8,8 +8,10 @@ public class UserInputSystem : ComponentSystem
     private EntityQuery _inputQuery;
 
     private InputAction _moveAction;
+    private InputAction _shootAction;
 
     private float2 _moveInput;
+    private float _shootInput;
     
     protected override void OnCreate()
     {
@@ -24,16 +26,23 @@ public class UserInputSystem : ComponentSystem
             .With("Down", "<Keyboard>/s")
             .With("Left", "<Keyboard>/a")
             .With("Right", "<Keyboard>/d");
-        
+
         _moveAction.performed += context => { _moveInput = context.ReadValue<Vector2>(); };
         _moveAction.started += context => { _moveInput = context.ReadValue<Vector2>(); };
         _moveAction.canceled += context => { _moveInput = context.ReadValue<Vector2>(); };
         _moveAction.Enable();
+
+        _shootAction = new InputAction("shoot", binding: "<Keyboard>/Space");
+        _shootAction.performed += context => { _shootInput = context.ReadValue<float>(); };
+        _shootAction.started += context => { _shootInput = context.ReadValue<float>(); };
+        _shootAction.canceled += context => { _shootInput = context.ReadValue<float>(); };
+        _shootAction.Enable();
     }
 
     protected override void OnStopRunning()
     {
         _moveAction.Disable();
+        _shootAction.Disable();
     }
 
     protected override void OnUpdate()
@@ -42,6 +51,7 @@ public class UserInputSystem : ComponentSystem
             (Entity entity, ref InputData inputData) =>
             {
                 inputData.Move = _moveInput;
+                inputData.Shoot = _shootInput;
             }
         );
     }
