@@ -7,6 +7,7 @@ public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
     public float speed = 1f;
 
     public MonoBehaviour ShootAction;
+    public MonoBehaviour DashAction;
 
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
     {
@@ -19,6 +20,10 @@ public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
         {
             dstManager.AddComponentData(entity, new ShootData());
         }
+        if (DashAction != null && DashAction is IAbility)
+        {
+            dstManager.AddComponentData(entity, new DashData());
+        }
     }
 }
 
@@ -26,6 +31,7 @@ public struct InputData : IComponentData
 {
     public float2 Move;
     public float Shoot;
+    public float Dash;
 }
 
 public struct MoveData : IComponentData
@@ -34,6 +40,11 @@ public struct MoveData : IComponentData
 }
 
 public struct ShootData : IComponentData
+{
+
+}
+
+public struct DashData : IComponentData
 {
 
 }

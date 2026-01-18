@@ -9,9 +9,11 @@ public class UserInputSystem : ComponentSystem
 
     private InputAction _moveAction;
     private InputAction _shootAction;
+    private InputAction _dashAction;
 
     private float2 _moveInput;
     private float _shootInput;
+    private float _dashInput;
     
     protected override void OnCreate()
     {
@@ -37,12 +39,19 @@ public class UserInputSystem : ComponentSystem
         _shootAction.started += context => { _shootInput = context.ReadValue<float>(); };
         _shootAction.canceled += context => { _shootInput = context.ReadValue<float>(); };
         _shootAction.Enable();
+
+        _dashAction = new InputAction("dash", binding: "<Keyboard>/Shift");
+        _dashAction.performed += context => { _dashInput = context.ReadValue<float>(); };
+        _dashAction.started += context => { _dashInput = context.ReadValue<float>(); };
+        _dashAction.canceled += context => { _dashInput = context.ReadValue<float>(); };
+        _dashAction.Enable();
     }
 
     protected override void OnStopRunning()
     {
         _moveAction.Disable();
         _shootAction.Disable();
+        _dashAction.Disable();
     }
 
     protected override void OnUpdate()
@@ -52,6 +61,7 @@ public class UserInputSystem : ComponentSystem
             {
                 inputData.Move = _moveInput;
                 inputData.Shoot = _shootInput;
+                inputData.Dash = _dashInput;
             }
         );
     }
