@@ -14,9 +14,7 @@ public class BulletMoveSystem : ComponentSystem
     {
         Entities.With(_bulletMoveQuery).ForEach((Entity entity, Transform transform, BulletMoveComponent bulletMoveComponent) =>
         {
-           var p = transform.position; 
-           p.z += bulletMoveComponent.moveSpeed/1000;
-           transform.position = p;
+            transform.position += transform.forward * bulletMoveComponent.moveSpeed / 1000;
         });
     }
 }

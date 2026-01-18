@@ -17,8 +17,13 @@ public class CharacterMoveSystem : ComponentSystem
         Entities.With(_moveQuery).ForEach(
             (Entity entity, Transform transform, ref InputData inputData, ref MoveData move) =>
             {
+                var direction = new Vector3(inputData.Move.x, 0, inputData.Move.y);
+                if (direction != Vector3.zero)
+                {
+                    transform.rotation = Quaternion.LookRotation(direction);
+                }
                 var pos = transform.position;
-                pos += new Vector3(inputData.Move.x * move.Speed, 0, inputData.Move.y * move.Speed);
+                pos += direction * move.Speed;
                 transform.position = pos;
             }
         );

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7081807316543964472}
   - component: {fileID: 6220904117061453697}
   - component: {fileID: 740988758}
+  - component: {fileID: 1099471242094826213}
   m_Layer: 0
   m_Name: SmallBullet
   m_TagString: Untagged
@@ -58,7 +59,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2fcd32b25fa404e99a7c8eaa906254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 5
+--- !u!114 &1099471242094826213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7081807316543964475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da422e8c276db849bfbcc5282b450c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
 --- !u!1 &7081807317086099047
 GameObject:
   m_ObjectHideFlags: 0

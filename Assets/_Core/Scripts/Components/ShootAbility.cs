@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootAbility : MonoBehaviour, IAbility
 {
     public GameObject bullet;
     public float shootDelay = 2f;
+    public Vector3 shootOffset = Vector3.up;
 
     private float _shootTime = float.MinValue; 
 
@@ -16,7 +15,7 @@ public class ShootAbility : MonoBehaviour, IAbility
         if (bullet != null)
         {
             var t = transform;
-            var newBullet = Instantiate(bullet, t.position, t.rotation);
+            var newBullet = Instantiate(bullet, t.position + t.TransformVector(shootOffset), t.rotation);
         } else
         {
             Debug.LogError("No bullet to shoot");
