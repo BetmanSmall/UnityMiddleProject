@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DogMoveComponent : MonoBehaviour
+public class BulletMoveComponent : MonoBehaviour
 {
     public float moveSpeed = 1f;
 }
