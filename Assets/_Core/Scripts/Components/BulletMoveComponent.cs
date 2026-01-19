@@ -8,10 +8,18 @@ public class BulletMoveComponent : MonoBehaviour, IConvertGameObjectToEntity
 
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
     {
+        dstManager.AddComponentData(entity, new BulletVelocityComponent
+        {
+            Velocity = transform.forward * moveSpeed
+        });
         dstManager.AddComponentData(entity, new LifetimeComponent
         {
             LifeTime = lifetime,
             SpawnTime = Time.time
         });
+        if (GameState.RicochetEnabled)
+        {
+            dstManager.AddComponentData(entity, new RicochetBulletComponent());
+        }
     }
 }
