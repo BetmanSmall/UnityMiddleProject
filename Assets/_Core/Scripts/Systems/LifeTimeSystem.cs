@@ -1,13 +1,13 @@
 using Unity.Entities;
 using UnityEngine;
 
-public class BulletLifeTimeSystem : ComponentSystem
+public class LifeTimeSystem : ComponentSystem
 {
     protected override void OnUpdate()
     {
-        Entities.WithAllReadOnly<BulletLifetimeComponent>().ForEach((Entity entity) =>
+        Entities.WithAllReadOnly<LifetimeComponent>().ForEach((Entity entity) =>
         {
-            var bulletLifetime = EntityManager.GetComponentData<BulletLifetimeComponent>(entity);
+            var bulletLifetime = EntityManager.GetComponentData<LifetimeComponent>(entity);
             if (World.Time.ElapsedTime > bulletLifetime.SpawnTime + bulletLifetime.LifeTime)
             {
                 var transform = EntityManager.GetComponentObject<Transform>(entity);

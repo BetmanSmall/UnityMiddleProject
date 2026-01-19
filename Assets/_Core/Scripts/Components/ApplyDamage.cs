@@ -15,6 +15,7 @@ public class ApplyDamage : MonoBehaviour, IAbilityTarget
             if (targetHealth != null)
             {
                 targetHealth.Health -= Damage;
+                
             }
         }
     }

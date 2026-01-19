@@ -8,7 +8,7 @@ public class BulletMoveComponent : MonoBehaviour, IConvertGameObjectToEntity
 
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
     {
-        dstManager.AddComponentData(entity, new BulletLifetimeComponent
+        dstManager.AddComponentData(entity, new LifetimeComponent
         {
             LifeTime = lifetime,
             SpawnTime = Time.time
