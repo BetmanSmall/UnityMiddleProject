@@ -3,15 +3,47 @@ using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, ICollisionAbility
+public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbility
 {
     public Collider Collider;
 
-    public List<Collider> Collisions { get; set; }
+    public List<MonoBehaviour> collisionActions = new List<MonoBehaviour>();
+    public List<IAbilityTarget> abilityTargets = new List<IAbilityTarget>();
+
+    [HideInInspector] public List<Collider> collisions;
+
+    void Awake()
+    {
+        if (Collider == null) Collider = gameObject.GetComponent<Collider>();
+    }
+
+    void Start()
+    {
+        foreach (var action in collisionActions)
+        {
+            if (action is IAbilityTarget ability)
+            {
+                abilityTargets.Add(ability);
+            }
+            else
+            {
+                Debug.LogError("CollisionAbility::Start(); -- Collision action is not an ability");
+            }
+        }
+    }
 
     public void Execute()
     {
         Debug.Log("CollisionAbility::Execute(); -- ");
+        foreach (var ability in abilityTargets)
+        {
+            ability.Targets = new List<GameObject>();
+            collisions.ForEach(c =>
+            {
+                if (c != null) ability.Targets.Add(c.gameObject);
+            });
+            ability.Execute();
+        }
     }
 
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)

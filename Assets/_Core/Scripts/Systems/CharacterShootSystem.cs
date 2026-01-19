@@ -1,5 +1,4 @@
 using Unity.Entities;
-using UnityEngine;
 
 public class CharacterShootSystem : ComponentSystem
 {

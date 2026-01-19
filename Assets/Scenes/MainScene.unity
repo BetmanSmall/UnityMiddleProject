@@ -849,6 +849,7 @@ GameObject:
   - component: {fileID: 1437121462}
   - component: {fileID: 1437121467}
   - component: {fileID: 1437121466}
+  - component: {fileID: 1437121468}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Untagged
@@ -941,11 +942,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1437121461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb77570a25fdf4c4f834724f6db05108, type: 3}
+  m_Script: {fileID: 11500000, guid: ebe4acdb198ea5341ac25890e157314b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 1437121462}
-  Damage: 1
+  Collider: {fileID: 0}
+  collisionActions:
+  - {fileID: 1437121468}
+  collisions: []
 --- !u!114 &1437121467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,6 +962,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 1
+--- !u!114 &1437121468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437121461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4e43d693af09148b42d9b200c72571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1776258160
 GameObject:
   m_ObjectHideFlags: 0
