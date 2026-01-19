@@ -1,10 +1,13 @@
+using System.Collections.Generic;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class CollisionAbility : MonoBehaviour, IAbility, IConvertGameObjectToEntity
+public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, ICollisionAbility
 {
     public Collider Collider;
+
+    public List<Collider> Collisions { get; set; }
 
     public void Execute()
     {

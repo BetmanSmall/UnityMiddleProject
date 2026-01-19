@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine;
 public class CollisionSystem : ComponentSystem
 {
     private EntityQuery _collisionQuery;
-    private Collider [] _results = new Collider [50];
+    private Collider [] _results = new Collider[50];
 
     protected override void OnCreate()
     {
@@ -19,11 +20,16 @@ public class CollisionSystem : ComponentSystem
     {
         var dstManager = World.DefaultGameObjectInjectionWorld.EntityManager;
         Entities.With(_collisionQuery).ForEach(
-            (Entity entity, CollisionAbility abilityCollision, ref ActorColliderData colliderData) =>
+            (Entity entity, Transform transform, ref ActorColliderData colliderData) =>
         {
-            var gameObject = abilityCollision.gameObject;
+            var gameObject = transform.gameObject;
             float3 position = gameObject.transform.position;
             Quaternion rotation = gameObject.transform.rotation;
+
+            var collisionAbility = gameObject.GetComponent<ICollisionAbility>();
+            if (collisionAbility == null) return;
+            collisionAbility.Collisions?.Clear();
+
             int size = 0;
 
             switch (colliderData.ColliderType)
@@ -51,7 +57,8 @@ public class CollisionSystem : ComponentSystem
             }
             if (size > 0)
             {
-                abilityCollision.Execute();
+                collisionAbility.Collisions = _results.ToList();
+                collisionAbility.Execute();
             }
         });
     }

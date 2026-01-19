@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c, type: 3}
       propertyPath: m_Name
-      value: DogPBR Variant
+      value: DogPBR
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214e08cd5e5d74c458e2a81b7ec2c84c, type: 3}
@@ -62,6 +62,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c, type: 3}
   m_PrefabInstance: {fileID: 5190906748426832207}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &2877604935276174781
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390427002091117983}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: -0, y: 0.7, z: -0}
 --- !u!114 &798027558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   ShootAction: {fileID: 798027560}
+  DashAction: {fileID: 3202405094909655436}
 --- !u!114 &798027560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,3 +117,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7081807316543964475, guid: 575985eeeefab7c4da94854da391df85, type: 3}
+  shootDelay: 2
+  shootOffset: {x: 0, y: 1, z: 0}
+--- !u!114 &3202405094909655436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390427002091117983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45aee852d5733048b461b781e1b2155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashDistance: 2
+  dashDelay: 1
+--- !u!114 &4084201013725723009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390427002091117983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371600fb89f56b43b88354976374352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 1000

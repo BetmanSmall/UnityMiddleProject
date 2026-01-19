@@ -583,52 +583,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: -30}
---- !u!1 &798027557 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4390427002091117983, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
-  m_PrefabInstance: {fileID: 5190906748083906155}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &798027558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798027557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e45aee852d5733048b461b781e1b2155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashDistance: 2
-  dashDelay: 1
---- !u!136 &798027559
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798027557}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.5
-  m_Direction: 1
-  m_Center: {x: -0, y: 0.7, z: -0}
---- !u!114 &798027560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798027557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebe4acdb198ea5341ac25890e157314b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collider: {fileID: 798027559}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,8 +847,10 @@ GameObject:
   - component: {fileID: 1437121464}
   - component: {fileID: 1437121463}
   - component: {fileID: 1437121462}
+  - component: {fileID: 1437121467}
+  - component: {fileID: 1437121466}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -976,6 +932,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1437121466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437121461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb77570a25fdf4c4f834724f6db05108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 1437121462}
+  Damage: 1
+--- !u!114 &1437121467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437121461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7d7495833204790ba1d3a8755397f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConversionMode: 1
 --- !u!1 &1776258160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,7 +1163,7 @@ MeshCollider:
   m_GameObject: {fileID: 1907805308}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -1255,10 +1238,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 798027559, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
-      propertyPath: DashAction
-      value: 
-      objectReference: {fileID: 798027558}
     - target: {fileID: 4390427002091012543, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
       propertyPath: m_RootOrder
       value: 3
