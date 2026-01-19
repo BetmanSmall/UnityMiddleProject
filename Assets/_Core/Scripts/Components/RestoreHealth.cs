@@ -1,11 +1,18 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Entities;
 
-public class RestoreHealth : MonoBehaviour, IAbilityTarget
+public class RestoreHealth : MonoBehaviour, IAbilityTarget, IConvertGameObjectToEntity
 {
     public int Health = 20;
     public List<GameObject> Targets { get; set; }
+    private Entity entity;
+
+    public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
+    {
+        this.entity = entity;
+    }
 
     public void Execute()
     {
@@ -21,5 +28,6 @@ public class RestoreHealth : MonoBehaviour, IAbilityTarget
             }
         }
         Destroy(gameObject);
+        World.DefaultGameObjectInjectionWorld.EntityManager.DestroyEntity(entity);
     }
 }
