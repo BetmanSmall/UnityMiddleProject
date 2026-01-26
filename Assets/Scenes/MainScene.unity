@@ -1044,6 +1044,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d089ccc35f74fb0a7c94a991d4c8ef, type: 3}
+--- !u!114 &1278490648 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 798027560, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
+  m_PrefabInstance: {fileID: 5190906748083906155}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac842ad44a65df94f92a7f17f2240214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1335921103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1591,6 +1602,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4084201013725723009, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: f73398c2b1bf50945a292a90f80835a8, type: 2}
+    - target: {fileID: 4084201013725723009, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
+      propertyPath: shootAbility
+      value: 
+      objectReference: {fileID: 1278490648}
     - target: {fileID: 4390427002091012543, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
       propertyPath: m_RootOrder
       value: 3
