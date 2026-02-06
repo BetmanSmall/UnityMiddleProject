@@ -29,7 +29,7 @@ public class AIEvaluteSystem : ComponentSystem
                         }
                     }
                 }
-                Debug.Log("AIEvaluteSystem::OnUpdate(); -- activeBehaviour: " + manager.activeBehaviour);
+                // Debug.Log("AIEvaluteSystem::OnUpdate(); -- activeBehaviour: " + manager.activeBehaviour);
             }
         );
     }

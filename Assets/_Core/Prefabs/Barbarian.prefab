@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bca2e1d006dc614cb27f15f737aa4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0.5
+  evaluate: 0.5
 --- !u!1 &6770536709687260695
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +392,7 @@ Transform:
   - {fileID: 6770536709686897259}
   m_Father: {fileID: 6770536709686897261}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.043904, y: 10.161033, z: 21.4524}
 --- !u!1 &6770536709687260747
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,7 +4675,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6770536709686897163}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 71.28701, y: -105.60686, z: -39.459328}
+  m_LocalEulerAnglesHint: {x: -8.481635, y: 178.61629, z: -46.103516}
 --- !u!1 &6770536709687261347
 GameObject:
   m_ObjectHideFlags: 0

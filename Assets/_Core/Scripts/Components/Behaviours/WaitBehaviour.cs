@@ -9,6 +9,6 @@ public class WaitBehaviour : MonoBehaviour, IBehaviour
     }
     public void Behave()
     {
-        Debug.Log("WaitBehaviour::Behave(); -- Wait");
+        // Debug.Log("WaitBehaviour::Behave(); -- Wait");
     }
 }

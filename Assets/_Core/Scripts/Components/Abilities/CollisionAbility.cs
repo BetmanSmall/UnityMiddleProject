@@ -34,7 +34,7 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
 
     public void Execute()
     {
-        Debug.Log("CollisionAbility::Execute(); -- ");
+        // Debug.Log("CollisionAbility::Execute(); -- ");
         foreach (var ability in abilityTargets)
         {
             ability.Targets = new List<GameObject>();
