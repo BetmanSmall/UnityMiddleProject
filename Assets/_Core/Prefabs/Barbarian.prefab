@@ -108,6 +108,9 @@ GameObject:
   - component: {fileID: 6770536709686897205}
   - component: {fileID: 6770536709679990217}
   - component: {fileID: 6770536709687292075}
+  - component: {fileID: 1042078916}
+  - component: {fileID: 1042078914}
+  - component: {fileID: 1042078915}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Untagged
@@ -165,6 +168,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 1
+--- !u!114 &1042078916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770536709687260693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c97899483fa8a449c73837d36b6b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1042078914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770536709687260693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659a8c006adee1c49882cc7c726b3f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
+--- !u!114 &1042078915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770536709687260693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bca2e1d006dc614cb27f15f737aa4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.5
 --- !u!1 &6770536709687260695
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,7 +4336,45 @@ SkinnedMeshRenderer:
   - {fileID: 6770536709686897419}
   - {fileID: 6770536709686897225}
   - {fileID: 6770536709686897483}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 6770536709686897623}
   m_AABB:
     m_Center: {x: -0.18230256, y: -0.06004536, z: 0}
@@ -4469,7 +4548,11 @@ SkinnedMeshRenderer:
   m_Mesh: {fileID: 4300038, guid: 859c3def7b0fdca4ba4a59bb97a3cb47, type: 3}
   m_Bones:
   - {fileID: 6770536709686897261}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 6770536709686897261}
   m_AABB:
     m_Center: {x: -0.12707059, y: 0.18542002, z: 0.0781691}
@@ -4553,7 +4636,11 @@ SkinnedMeshRenderer:
   m_Mesh: {fileID: 4300040, guid: 859c3def7b0fdca4ba4a59bb97a3cb47, type: 3}
   m_Bones:
   - {fileID: 6770536709686897261}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 6770536709686897261}
   m_AABB:
     m_Center: {x: -0.13011275, y: 0.18323462, z: -0.08138887}
@@ -4588,7 +4675,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6770536709686897163}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 71.28701, y: -105.60686, z: -39.459328}
 --- !u!1 &6770536709687261347
 GameObject:
   m_ObjectHideFlags: 0

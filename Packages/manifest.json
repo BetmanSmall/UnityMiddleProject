@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.elringus.unitygoogledrive": "https://github.com/elringus/unity-google-drive.git#package",
     "com.unity.collab-proxy": "2.0.4",
     "com.unity.entities": "0.17.0-preview.42",
     "com.unity.ide.rider": "3.0.21",
