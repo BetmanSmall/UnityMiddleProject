@@ -1,10 +1,12 @@
 using UnityEngine;
+using Zenject;
 
 public class CharacterHealth : MonoBehaviour
 {
-    public Settings settings;
+    [Inject] private IGameConfigProvider _configProvider;
+
     public ShootAbility shootAbility;
-    private int _health = 1000;
+    public int _health;
 
     public int Health
     {
@@ -29,6 +31,6 @@ public class CharacterHealth : MonoBehaviour
 
     private void Start()
     {
-        _health = settings.MaxHealth;
+        _health = _configProvider.MaxHealth;
     }
 }
