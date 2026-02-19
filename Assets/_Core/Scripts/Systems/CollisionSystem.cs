@@ -22,6 +22,11 @@ public class CollisionSystem : ComponentSystem
             (Entity entity, CollisionAbility collisionAbility, ref ActorColliderData colliderData) =>
         {
             var gameObject = collisionAbility.gameObject;
+            if (gameObject == null)
+            {
+                return;
+            }
+
             float3 position = gameObject.transform.position;
             Quaternion rotation = gameObject.transform.rotation;
 

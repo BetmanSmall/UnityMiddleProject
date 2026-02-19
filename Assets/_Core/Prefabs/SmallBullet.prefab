@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 7081807316543964472}
   - component: {fileID: 6220904117061453697}
   - component: {fileID: 740988758}
-  m_Layer: 0
+  - component: {fileID: 1419917301}
+  - component: {fileID: 7436105765151759147}
+  - component: {fileID: 7814917034301257573}
+  m_Layer: 6
   m_Name: SmallBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,6 +63,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   lifetime: 5
+--- !u!114 &1419917301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7081807316543964475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997b15bf791953a4c9535c43cc31ac07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trailEffectPrefabs:
+  - {fileID: 8400424712307853490, guid: 366377810aaf4fc4ab2be725a54c5712, type: 3}
+  - {fileID: 389821699222927281, guid: 856f1f18fb8861d4499813c38a5963ae, type: 3}
+--- !u!114 &7436105765151759147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7081807316543964475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb470244f6fa53a49b906f77933148e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffectPrefabs:
+  - {fileID: 5162910912013668194, guid: cf82839c411151342a7b2337bda9fb34, type: 3}
+  - {fileID: 8464950693656172981, guid: 83ad694f134ab954580473212156b35a, type: 3}
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 55
+  destroyOnCollision: 1
+--- !u!54 &7814917034301257573
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7081807316543964475}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7081807317086099047
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +125,7 @@ GameObject:
   - component: {fileID: 7081807317086099042}
   - component: {fileID: 7081807317086099045}
   - component: {fileID: 7081807317086099044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +203,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7081807317086099047}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

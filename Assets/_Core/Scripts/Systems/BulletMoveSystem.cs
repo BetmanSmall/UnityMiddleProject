@@ -15,6 +15,12 @@ public class BulletMoveSystem : ComponentSystem
         Entities.With(_bulletMoveQuery).ForEach((Entity entity, BulletMoveComponent bulletMoveComponent, ref BulletVelocityComponent velocity) =>
         {
             var transform = EntityManager.GetComponentObject<Transform>(entity);
+            if (transform == null)
+            {
+                EntityManager.DestroyEntity(entity);
+                return;
+            }
+
             Vector3 moveDelta = velocity.Velocity * World.Time.DeltaTime;
             float distance = moveDelta.magnitude;
             if (EntityManager.HasComponent<RicochetBulletComponent>(entity) && Physics.Raycast(transform.position, moveDelta.normalized, out RaycastHit hit, distance))

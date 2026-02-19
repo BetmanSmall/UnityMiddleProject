@@ -20,6 +20,11 @@ public class BulletMoveComponent : MonoBehaviour, IConvertGameObjectToEntity
         if (GameState.RicochetEnabled)
         {
             dstManager.AddComponentData(entity, new RicochetBulletComponent());
+            BulletCollisionHandler bulletCollisionHandler = gameObject.GetComponent<BulletCollisionHandler>();
+            if (bulletCollisionHandler != null)
+            {
+                bulletCollisionHandler.destroyOnCollision = false;
+            }
         }
     }
 }
