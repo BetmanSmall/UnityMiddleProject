@@ -34,9 +34,10 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
 
     public void Execute()
     {
-        // Debug.Log("CollisionAbility::Execute(); -- ");
+        // Debug.Log("CollisionAbility::Execute(); -- abilities:" + abilities.Count, gameObject);
         foreach (var ability in abilities)
         {
+            // Debug.Log("CollisionAbility::Execute(); -- ability:" + ability);
             if (ability is IAbilityTarget abilityTarget)
             {
                 abilityTarget.Targets = new List<GameObject>();
@@ -44,8 +45,12 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
                 {
                     if (c != null) abilityTarget.Targets.Add(c.gameObject);
                 });
+                ability.Execute();
             }
-            ability.Execute();
+            else
+            {
+                ability.Execute();
+            }
         }
     }
 

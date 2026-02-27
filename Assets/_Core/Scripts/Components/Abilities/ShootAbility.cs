@@ -9,6 +9,7 @@ public class ShootAbility : MonoBehaviour, IAbility
 
     private float _shootTime = float.MinValue; 
     public PlayerStats playerStats;
+    private AnimationTriggerComponent _animationTrigger;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class ShootAbility : MonoBehaviour, IAbility
         {
             playerStats = new PlayerStats();
         }
+        _animationTrigger = GetComponent<AnimationTriggerComponent>();
     }
 
     public void Execute()
@@ -32,6 +34,10 @@ public class ShootAbility : MonoBehaviour, IAbility
             var t = transform;
             var newBullet = Instantiate(bullet, t.position + t.TransformVector(shootOffset), t.rotation);
             playerStats.shotsCount++;
+            if (_animationTrigger != null)
+            {
+                _animationTrigger.TriggerAttack();
+            }
         } else
         {
             Debug.LogError("No bullet to shoot");

@@ -30,6 +30,7 @@ public class CollisionSystem : ComponentSystem
             float3 position = gameObject.transform.position;
             Quaternion rotation = gameObject.transform.rotation;
 
+            // Debug.Log("CollisionSystem::OnUpdate(); -- collisionAbility: " + collisionAbility + ", collisionAbility?.collisions.Count: " + collisionAbility?.collisions?.Count, collisionAbility.gameObject);
             collisionAbility?.collisions?.Clear();
 
             int size = 0;
@@ -62,6 +63,7 @@ public class CollisionSystem : ComponentSystem
                 foreach (var result in _results) {
                     collisionAbility?.collisions?.Add(result);
                 }
+                // Debug.Log("CollisionSystem::OnUpdate(); -- collisionAbility: " + collisionAbility + ", collisionAbility?.collisions.Count: " + collisionAbility?.collisions?.Count, collisionAbility.gameObject);
                 collisionAbility.Execute();
             }
         });

@@ -1,16 +1,16 @@
-using Unity.Entities;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class TrapAbility : CollisionAbility
 {
     public int Damage;
 
-    public void Execute()
+    public new void Execute()
     {
-        foreach (var targer in collisions)
+        // Debug.Log("TrapAbility::Execute(); -- collisions.Count: " + collisions.Count, gameObject);
+        foreach (var target in collisions)
         {
-            var targetHealth = targer?.GetComponent<CharacterHealth>();
+            // Debug.Log("TrapAbility::Execute(); -- target: " + target, target.gameObject);
+            var targetHealth = target?.GetComponent<CharacterHealth>();
             if (targetHealth != null)
             {
                 targetHealth.Health -= Damage;

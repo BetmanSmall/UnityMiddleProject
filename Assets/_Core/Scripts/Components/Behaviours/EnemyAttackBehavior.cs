@@ -5,7 +5,7 @@ public class EnemyAttackBehavior : MonoBehaviour, IBehaviour
 {
     private Animator animator;
     private CharacterController playerCharacterController;
-    public float distanceToEvaluate = 0.9f;
+    public float distanceToEvaluate = 1f;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -16,6 +16,7 @@ public class EnemyAttackBehavior : MonoBehaviour, IBehaviour
         if (playerCharacterController == null) return 0;
         var magnitude = 1/(gameObject.transform.position - playerCharacterController.transform.position).magnitude;
         // Debug.Log("EnemyAttackBehavior::Evaluate(); -- magnitude: " + magnitude);
+        // Debug.Log("EnemyAttackBehavior::Evaluate(); -- distanceToEvaluate: " + distanceToEvaluate);
         if (magnitude >= distanceToEvaluate) return 1f;
         else return 0f;
     }
