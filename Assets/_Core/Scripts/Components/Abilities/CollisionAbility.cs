@@ -8,7 +8,7 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
     public Collider Collider;
 
     public List<MonoBehaviour> collisionActions = new List<MonoBehaviour>();
-    public List<IAbilityTarget> abilityTargets = new List<IAbilityTarget>();
+    public List<IAbility> abilities = new List<IAbility>();
 
     [HideInInspector] public List<Collider> collisions;
 
@@ -21,9 +21,9 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
     {
         foreach (var action in collisionActions)
         {
-            if (action is IAbilityTarget ability)
+            if (action is IAbility ability)
             {
-                abilityTargets.Add(ability);
+                abilities.Add(ability);
             }
             else
             {
@@ -35,13 +35,16 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
     public void Execute()
     {
         // Debug.Log("CollisionAbility::Execute(); -- ");
-        foreach (var ability in abilityTargets)
+        foreach (var ability in abilities)
         {
-            ability.Targets = new List<GameObject>();
-            collisions.ForEach(c =>
+            if (ability is IAbilityTarget abilityTarget)
             {
-                if (c != null) ability.Targets.Add(c.gameObject);
-            });
+                abilityTarget.Targets = new List<GameObject>();
+                collisions.ForEach(c =>
+                {
+                    if (c != null) abilityTarget.Targets.Add(c.gameObject);
+                });
+            }
             ability.Execute();
         }
     }

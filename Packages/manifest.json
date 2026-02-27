@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.handzlikchris.fastscriptreload": "https://github.com/handzlikchris/FastScriptReload.git?path=Assets#1.6.1",
     "com.unity.ai.navigation": "1.0.0-exp.4",
     "com.unity.collab-proxy": "2.0.4",
     "com.unity.entities": "0.17.0-preview.42",
@@ -13,6 +14,7 @@
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.4.8",
     "com.unity.ugui": "1.0.0",
+    "com.yasirkula.inspectplus": "https://github.com/yasirkula/UnityInspectPlus.git#v1.9.3",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.handzlikchris.fastscriptreload": {
+      "version": "https://github.com/handzlikchris/FastScriptReload.git?path=Assets#1.6.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5fe8f53af23d2400ca2b57875d4e57669c33dc23"
+    },
     "com.unity.ai.navigation": {
       "version": "1.0.0-exp.4",
       "depth": 0,
@@ -270,6 +277,13 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.yasirkula.inspectplus": {
+      "version": "https://github.com/yasirkula/UnityInspectPlus.git#v1.9.3",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "75164f3a90951fc8689e448648958a3bcf6d8ae8"
     },
     "nuget.mono-cecil": {
       "version": "0.1.6-preview",

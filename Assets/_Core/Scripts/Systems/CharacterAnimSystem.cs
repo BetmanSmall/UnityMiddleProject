@@ -21,7 +21,10 @@ public class CharacterAnimSystem : ComponentSystem
 
                 if (userInputData.moveAnimSpeedHash != string.Empty)
                 {
-                    animator.SetFloat(userInputData.moveAnimSpeedHash, userInputData.speed*math.distancesq(inputData.Move.x, inputData.Move.y));
+                    float currentInputStrength = math.length(inputData.Move);
+                    float normalizedInput = math.clamp(currentInputStrength * userInputData.speed, 0f, 1f);
+                    animator.SetFloat(userInputData.moveAnimSpeedHash, normalizedInput, 0.1f, Time.DeltaTime);
+                    // animator.SetFloat(userInputData.moveAnimSpeedHash, userInputData.speed*math.distancesq(inputData.Move.x, inputData.Move.y));
                 }
             }
         );
