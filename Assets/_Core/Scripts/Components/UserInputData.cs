@@ -5,6 +5,8 @@ using UnityEngine;
 public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
 {
     public float speed = 1f;
+    public string moveAnimHash = "Moving";
+    public string moveAnimSpeedHash = "MovingAnimSpeed";
 
     public MonoBehaviour ShootAction;
     public MonoBehaviour DashAction;
@@ -23,6 +25,10 @@ public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
         if (DashAction != null && DashAction is IAbility)
         {
             dstManager.AddComponentData(entity, new DashData());
+        }
+        if (moveAnimHash != string.Empty)
+        {
+            dstManager.AddComponentData(entity, new AnimData());
         }
     }
 }
@@ -45,6 +51,11 @@ public struct ShootData : IComponentData
 }
 
 public struct DashData : IComponentData
+{
+
+}
+
+public struct AnimData : IComponentData
 {
 
 }

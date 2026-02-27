@@ -1099,10 +1099,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieMesh (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2918435036532412665, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
-      propertyPath: m_Speed
-      value: 0.7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
 --- !u!1001 &1335921103
@@ -1441,7 +1437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1563240432
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2073,10 +2069,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieMesh
       objectReference: {fileID: 0}
-    - target: {fileID: 2918435036532412665, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
-      propertyPath: m_Speed
-      value: 0.7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
 --- !u!1001 &2972152752723734697
@@ -2201,31 +2193,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
---- !u!1 &5190906748083906156 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4390427002091117983, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
+--- !u!114 &5190906748083906157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5190906748083906157, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
   m_PrefabInstance: {fileID: 5190906748083906155}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5190906748083906157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5190906748083906156}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be75832f2c6399048bcb09ebf2a502ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderers: []
-  materialsToChange:
-  - {fileID: 2100000, guid: bcf5c360daee0844e92db2e2f6d18824, type: 2}
-  - {fileID: 2100000, guid: 59075f775befbc94fb3f2bc60ca0f90b, type: 2}
-  - {fileID: 2100000, guid: b36b11cc52c29c14fa355603870d9b97, type: 2}
-  - {fileID: 2100000, guid: 6aae4f477fd16e74db6475785c4752b5, type: 2}
-  - {fileID: 2100000, guid: 72ab0d3a987779844ab762a5f16ecc5f, type: 2}
-  - {fileID: 2100000, guid: 1019dec167ec4814495e43f051c0bf49, type: 2}
 --- !u!1001 &7081807315807441518
 PrefabInstance:
   m_ObjectHideFlags: 0

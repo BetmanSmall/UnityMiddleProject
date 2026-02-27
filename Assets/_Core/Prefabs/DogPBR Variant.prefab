@@ -127,7 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621eeedc9bf793a4ab86903deae94316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 2
+  moveAnimHash: Moving
+  moveAnimSpeedHash: MovingAnimSpeed
   ShootAction: {fileID: 798027560}
   DashAction: {fileID: 3202405094909655436}
 --- !u!114 &798027560
@@ -175,3 +177,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootAbility: {fileID: 798027560}
   _health: 0
+--- !u!114 &5190906748083906157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390427002091117983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be75832f2c6399048bcb09ebf2a502ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers: []
+  materialsToChange:
+  - {fileID: 2100000, guid: bcf5c360daee0844e92db2e2f6d18824, type: 2}
+  - {fileID: 2100000, guid: 59075f775befbc94fb3f2bc60ca0f90b, type: 2}
+  - {fileID: 2100000, guid: b36b11cc52c29c14fa355603870d9b97, type: 2}
+  - {fileID: 2100000, guid: 6aae4f477fd16e74db6475785c4752b5, type: 2}
+  - {fileID: 2100000, guid: 72ab0d3a987779844ab762a5f16ecc5f, type: 2}
+  - {fileID: 2100000, guid: 1019dec167ec4814495e43f051c0bf49, type: 2}
