@@ -1,22 +1,16 @@
 {
     "playerSpeed": 7.5,
-    "maxHealth": 120,
+    "maxHealth": 1200,
     "shootCooldown": 0.3,
     "bulletDamage": 15,
     "dashDistance": 4.0,
     "dashCooldown": 0.8,
-    "gameTitle": "Unity Middle Project - Enhanced",
-    "enableSound": true,
-    "musicVolume": 0.7,
-    "sfxVolume": 0.9,
     "maxZombies": 15,
     "zombieSpawnRate": 1.5,
     "zombieSpeed": 2.5,
-    "zombieDamage": 25,
+    "zombieDamage": 1,
     "medpackHealAmount": 35.0,
-    "trapDamage": 60.0,
-    "bulletSpeed": 15.0,
-    "ricochetMaxBounces": 5,
-    "gravity": -9.81,
-    "jumpForce": 6.0
+    "trapDamage": 1,
+    "bulletSpeed": 5.0,
+    "ricochetMaxBounces": 5
 }

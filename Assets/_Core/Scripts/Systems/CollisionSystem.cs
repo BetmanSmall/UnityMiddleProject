@@ -21,6 +21,7 @@ public class CollisionSystem : ComponentSystem
         Entities.With(_collisionQuery).ForEach(
             (Entity entity, CollisionAbility collisionAbility, ref ActorColliderData colliderData) =>
         {
+            if (collisionAbility == null) EntityManager.DestroyEntity(entity);
             var gameObject = collisionAbility.gameObject;
             if (gameObject == null)
             {

@@ -1,8 +1,11 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class ShootAbility : MonoBehaviour, IAbility
 {
+    [Inject] private IGameConfigProvider _configProvider;
+    [Inject] private DiContainer _container;
     public GameObject bullet;
     public float shootDelay = 2f;
     public Vector3 shootOffset = Vector3.up;
@@ -23,6 +26,7 @@ public class ShootAbility : MonoBehaviour, IAbility
             playerStats = new PlayerStats();
         }
         _animationTrigger = GetComponent<AnimationTriggerComponent>();
+        shootDelay = _configProvider.ShootCooldown;
     }
 
     public void Execute()
@@ -32,7 +36,7 @@ public class ShootAbility : MonoBehaviour, IAbility
         if (bullet != null)
         {
             var t = transform;
-            var newBullet = Instantiate(bullet, t.position + t.TransformVector(shootOffset), t.rotation);
+            var newBullet = _container.InstantiatePrefab(bullet, t.position + t.TransformVector(shootOffset), t.rotation, null);
             playerStats.shotsCount++;
             if (_animationTrigger != null)
             {

@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
+using Zenject;
 
 public class RestoreHealth : MonoBehaviour, IAbilityTarget, IConvertGameObjectToEntity
 {
+    [Inject] private IGameConfigProvider _configProvider;
     public int Health = 20;
     public List<GameObject> Targets { get; set; }
     private Entity entity;
+
+    void Start()
+    {
+        Health = (int)_configProvider.MedpackHealAmount;
+    }
 
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
     {

@@ -1,9 +1,11 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
+using Zenject;
 
 public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
 {
+    [Inject] private IGameConfigProvider _configProvider;
     public float speed = 1f;
     public string moveAnimHash = "Moving";
     public string moveAnimSpeedHash = "MovingAnimSpeed";
@@ -11,6 +13,10 @@ public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
     public MonoBehaviour ShootAction;
     public MonoBehaviour DashAction;
 
+    void Start()
+    {
+        speed = _configProvider.PlayerSpeed;
+    }
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
     {
         dstManager.AddComponentData(entity, new InputData());

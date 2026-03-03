@@ -12,4 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e425cd2cfc798964db3dccf918f646c5, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  MaxHealth: 999
+  MaxHealth: 1000
+  PlayerSpeed: 5
+  ShootCooldown: 0.5
+  BulletDamage: 10
+  DashDistance: 3
+  DashCooldown: 1
+  ZombieSpeed: 2
+  ZombieDamage: 20
+  MaxZombies: 10
+  ZombieSpawnRate: 2
+  MedpackHealAmount: 30
+  TrapDamage: 50
+  BulletSpeed: 10
+  RicochetMaxBounces: 3
+  Gravity: -9.81
+  JumpForce: 5
+  MusicVolume: 0.8
+  SfxVolume: 1
+  EnableSound: 1
+  GameTitle: Unity Middle Project

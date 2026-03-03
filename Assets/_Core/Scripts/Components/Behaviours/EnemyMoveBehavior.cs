@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Zenject;
 
 [RequireComponent(typeof(Animator), typeof(NavMeshAgent))]
 public class EnemyMoveBehavior : MonoBehaviour, IBehaviour
 {
+    [Inject] private IGameConfigProvider _configProvider;
     private NavMeshAgent navMeshAgent;
     private Animator animator;
     private CharacterController playerCharacterController;
@@ -13,6 +15,10 @@ public class EnemyMoveBehavior : MonoBehaviour, IBehaviour
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         playerCharacterController = FindObjectOfType<CharacterController>();
+        if (navMeshAgent != null)
+        {
+            navMeshAgent.speed = _configProvider.ZombieSpeed;
+        }
     }
     public float Evaluate()
     {

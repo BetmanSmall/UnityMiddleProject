@@ -1,8 +1,15 @@
 using UnityEngine;
+using Zenject;
 
 public class TrapAbility : CollisionAbility
 {
+    [Inject] private IGameConfigProvider _configProvider;
     public int Damage;
+
+    void Start()
+    {
+        Damage = (int)_configProvider.TrapDamage;
+    }
 
     public new void Execute()
     {

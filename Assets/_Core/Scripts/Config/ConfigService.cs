@@ -53,6 +53,7 @@ public class ConfigService : MonoBehaviour
             IsLoaded = true;
             OnConfigLoaded?.Invoke();
             Debug.Log("ConfigService::LoadConfigAsync(); -- Config:" + Config);
+            Debug.Log("ConfigService::LoadConfigAsync(); -- Config:" + JsonUtility.ToJson(Config));
             return Config;
         }
         catch (Exception ex)

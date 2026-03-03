@@ -17,6 +17,7 @@ public class CharacterAnimSystem : ComponentSystem
         Entities.With(_query).ForEach(
             (Entity entity, ref InputData inputData, Animator animator, UserInputData userInputData) =>
             {
+                if (animator == null) EntityManager.DestroyEntity(entity);
                 animator.SetBool(userInputData.moveAnimHash, Mathf.Abs(inputData.Move.x) > 0.01f || Mathf.Abs(inputData.Move.y) > 0.01f);
 
                 if (userInputData.moveAnimSpeedHash != string.Empty)

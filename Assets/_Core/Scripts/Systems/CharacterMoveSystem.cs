@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterMoveSystem : ComponentSystem
 {
     private EntityQuery _moveQuery;
-    
+
     protected override void OnCreate()
     {
         _moveQuery = GetEntityQuery(ComponentType.ReadOnly<InputData>(),
