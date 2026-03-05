@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e425cd2cfc798964db3dccf918f646c5, type: 3}
-  m_Name: Settings
+  m_Name: DevelopmentSettings
   m_EditorClassIdentifier: 
-  MaxHealth: 1010
-  PlayerSpeed: 5
+  MaxHealth: 1000
+  PlayerSpeed: 8
   ShootCooldown: 0.5
-  BulletDamage: 10
+  BulletDamage: 15
   DashDistance: 3
   DashCooldown: 1
-  ZombieSpeed: 2
-  ZombieDamage: 20
+  ZombieSpeed: 1
+  ZombieDamage: 10
   MaxZombies: 10
   ZombieSpawnRate: 2
   MedpackHealAmount: 30

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e425cd2cfc798964db3dccf918f646c5, type: 3}
-  m_Name: Settings
+  m_Name: ProductionSettings
   m_EditorClassIdentifier: 
   MaxHealth: 1010
   PlayerSpeed: 5
