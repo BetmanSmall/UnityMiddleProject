@@ -457,6 +457,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieMesh (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2906659754222903031, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
 --- !u!1 &365167027
@@ -2924,6 +2928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieMesh (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2906659754222903031, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
 --- !u!1001 &1335921103
@@ -3907,6 +3915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 2906659754222903031, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0dda3419d3a3624aa0568877faad9b5, type: 3}
 --- !u!1001 &5190906748083906155
@@ -3966,17 +3978,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
+--- !u!1 &5190906748083906156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4390427002091117983, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
+  m_PrefabInstance: {fileID: 5190906748083906155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5190906748083906157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5190906748083906157, guid: b1977ca3cd6f7e445857c8cea9829a4b, type: 3}
   m_PrefabInstance: {fileID: 5190906748083906155}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5190906748083906156}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be75832f2c6399048bcb09ebf2a502ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5190906748083906158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5190906748083906156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ced10c383445048ab2b0765163d7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minLevel: 5
+  levelUpHealth: 10
+--- !u!114 &5190906748083906159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5190906748083906156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4351681bdc5275b41bbefc4b972e6ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelUpActions:
+  - {fileID: 5190906748083906158}
+  currentLevel: 1
+  score: 0
+  scoreToNextLevel: 20
 --- !u!1001 &7081807315807441518
 PrefabInstance:
   m_ObjectHideFlags: 0

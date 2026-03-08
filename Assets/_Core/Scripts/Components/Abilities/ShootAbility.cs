@@ -13,9 +13,11 @@ public class ShootAbility : MonoBehaviour, IAbility
     private float _shootTime = float.MinValue; 
     public PlayerStats playerStats;
     private AnimationTriggerComponent _animationTrigger;
+    private CharacterLevel _characterLevel;
 
     void Start()
     {
+        _characterLevel = GetComponent<CharacterLevel>();
         var jsonStatistics = PlayerPrefs.GetString("statistics");
         if (jsonStatistics != null && !jsonStatistics.Equals(String.Empty, StringComparison.Ordinal))
         {
@@ -38,6 +40,7 @@ public class ShootAbility : MonoBehaviour, IAbility
             var t = transform;
             var newBullet = _container.InstantiatePrefab(bullet, t.position + t.TransformVector(shootOffset), t.rotation, null);
             playerStats.shotsCount++;
+            _characterLevel.AddScore(10);
             if (_animationTrigger != null)
             {
                 _animationTrigger.TriggerAttack();
