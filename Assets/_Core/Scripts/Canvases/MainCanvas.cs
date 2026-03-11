@@ -7,4 +7,9 @@ public class MainCanvas : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void TogglePanel(GameObject panel)
+    {
+        panel.SetActive(!panel.activeSelf);
+    }
 }

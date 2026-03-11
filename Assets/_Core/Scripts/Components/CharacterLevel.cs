@@ -4,9 +4,13 @@ using UnityEngine;
 public class CharacterLevel : MonoBehaviour
 {
     public List<MonoBehaviour> levelUpActions;
+
+    public GameObject InventoryUIRoot;
     [SerializeField] private int currentLevel = 1;
     [SerializeField] private int score = 0;
     [SerializeField] private int scoreToNextLevel = 20;
+
+    private List<IItem> items;
 
     public int CurrentLevel => currentLevel;
 
