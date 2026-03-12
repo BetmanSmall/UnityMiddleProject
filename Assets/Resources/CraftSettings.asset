@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4b212aa37595d48a51c0684fa30cd4, type: 3}
+  m_Name: CraftSettings
+  m_EditorClassIdentifier: 
+  combinations:
+  - sources:
+    - Heart
+    - Heart
+    result: {fileID: 8102154349367460333, guid: 51cee3f087236584c9a70b8d12b49fc0, type: 3}
+  - sources: []
+    result: {fileID: 0}

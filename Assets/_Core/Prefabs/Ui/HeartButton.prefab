@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8102154349367460334}
   - component: {fileID: 8102154349367460321}
-  - component: {fileID: 7349300561303233406}
+  - component: {fileID: 4582578678193668475}
   m_Layer: 5
-  m_Name: StarButton
+  m_Name: HeartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8102154349367460333}
   m_CullTransparentMesh: 1
---- !u!114 &7349300561303233406
+--- !u!114 &4582578678193668475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,9 +56,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8102154349367460333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8cd157855196034cbd85536b0cd96c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 25ee0361bb4011d478bf0b40f8a6cd90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Heart
 --- !u!1 &8102154349937410323
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +125,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2d2d75d383dae9b40b9b53a931127253, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f9a4714dfc315d48b8e91e5453067ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
