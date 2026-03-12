@@ -12,16 +12,23 @@ public class CharacterHealth : MonoBehaviour
 
     public UnityEvent OnDeath;
 
+    private ViewModelCanvas _viewModelCanvas;
+
     public int Health
     {
         get => _health;
         set
         {
+            if (_health == value) return;
             // Debug.Log("CharacterHealth::Health(); -- previous value: " + _health);
             // Debug.Log("CharacterHealth::Health(); -- new value: " + value);
-            if (_health <= 0) return;
+            if (_health < 0) return;
             int previousHealth = _health;
             _health = value;
+            if (_viewModelCanvas != null)
+            {
+                _viewModelCanvas.Health = _health.ToString();
+            }
             if (_health < previousHealth && _animationTrigger != null)
             {
                 _animationTrigger.TriggerTakeDamage();
@@ -40,7 +47,8 @@ public class CharacterHealth : MonoBehaviour
 
     private void Start()
     {
-        _health = _configProvider.MaxHealth;
+        _viewModelCanvas = FindObjectOfType<ViewModelCanvas>();
+        Health = _configProvider.MaxHealth;
         _animationTrigger = GetComponent<AnimationTriggerComponent>();
     }
 
